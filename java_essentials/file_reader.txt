@@ -1,0 +1,17 @@
+package filereaderout:
+import java.io.*;
+import java.util.Scanner;
+public class filereaderout
+{
+ public static void main(String[] args) throws IOException
+ {
+ File file = new File("C:\\acashsoftware\\workspaceacash\\filereader\\src\\sample");
+Scanner scan = new Scanner(file);
+
+File file1 = = new File("C:\\acashsoftware\\workspaceacash\\filereader\\src\\out");
+FileWriter fw=new FileWriter(file1);
+PrintWriter pw=new PrintWriter(fw);
+
+while(scan.hasNextLine())
+{
+String s=scan.nextLine();

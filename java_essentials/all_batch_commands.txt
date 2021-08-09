@@ -1,0 +1,13 @@
+@echo off
+
+C:
+cd C:\acashsoftware\work
+copy dummy.xlsx play
+cd C:\acashsoftware\work\play
+ren dummy.xlsx acash.xlsx
+start acash.xlsx
+
+start chrome "https://www.google.com"
+
+cd C:\acashsoftware\work
+start meow.txt

@@ -1,0 +1,48 @@
+//excel sheet must be in .xlsx format
+//line of code for poi must be added in apache
+
+import java.io.*;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.*;
+
+/* YOLO
+import
+
+
+
+*/
+
+public class excel_extractor
+{
+ public static void main(String[] args) throws IOException
+ {
+  String path="E:/acashsoftware/excel_docs/excel_example.xlsx";
+  FileInputStream file=new FileInputStream(new File(path));
+  Workbook workbook=new XSSFWorkbook(file);
+  XSSFSheet fSheet=(XSSFSheet) workbook.getSheetAt(0);
+  /* XSSFRow rowA1=fSheet.getRow(0);
+  XSSFCell cellA1=rowA1.getCell(0);
+  System.out.println(cellA1); */
+
+  int last_row=29;
+  int i;
+  
+  for(i=1;i<last_row;i++)
+  {
+   XSSFRow rowA3=fSheet.getRow(i);
+   XSSFCell cellA3=rowA3.getCell(0);
+   //System.out.println(cellA3);
+   XSSFRow rowA2=fSheet.getRow(i);
+   XSSFCell cellA2=rowA2.getCell(2);
+   //System.out.println(cellA2);
+   //System.out.println(cellA3+","+cellA2);
+   String s=cellA3.toString();
+   String a=cellA2.toString();
+   String up=s.toUpperCase();
+   
+   if(a.compareTo("acash")==0)
+   {System.out.println("acash found");}
+
+
+   
+  
