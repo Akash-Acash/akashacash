@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       <title>My First Website</title>
+   </head>
+
+   <body style="background-color:grey;">
+    <br />
+    <h3 id="top">
+      <font size="6">CODING-ESSENTIALS</font>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <font>
+      <a href="index.html">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#0001">Batch_scripts</a>&nbsp;
+<a href="#0002">file_reader</a>&nbsp;
+<a href="#0003">print_writer</a>&nbsp;
+<a href="#0004">read_input_from_excel</a>&nbsp;
+
+      </font>
+    </h3>
+    <br />
+
+
+<p id="0001">
+<u><b>Batch scrpit for essential things</b></u><br> 
+<p>
+
+@echo off</br>
+</br>
+E:</br>
+cd E:\acashsoftware\work           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//copies dummy.xlsx inside work folder and place in play folder</br>
+copy dummy.xlsx play               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//note:play folder is inside work folder, ...work/play   </br>
+cd E:\acashsoftware\work\play</br>
+ren dummy.xlsx acash.xlsx          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//renames dummy.xlsx to acash.xlsx.</br>
+start acash.xlsx                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//opens that file</br>
+</br>
+start chrome "https://www.google.com"</br>
+</br>
+cd E:\acashsoftware\work</br>
+start meow.txt</br>
+
+</p>
+<a href="#top">back to top</a></p>
+
+
+<p id="0002">
+<u><b>Program to read from the text file sample2</b></u><br> 
+<p>
+
+package filereader;</br>
+import java.io.File;</br>
+import java.io.FileNotFoundException;</br>
+import java.util.Scanner;</br>
+</br>
+public class filereader3000</br>
+{</br>
+ public static void main(String[] args) throws FileNotFoundException</br>
+ {</br>
+  File file = new File("E:\\eclipse for java\\content workspace\\filereader\\sample2"); //input is given in sample2.txt</br>
+  Scanner scan = new Scanner(file);</br>
+  while(scan.hasNextLine())</br>
+  {</br>
+   String s=scan.nextLine();</br>
+   char c;</br>
+   String n="";</br>
+   String w="@JsonProperty"; //word length is 13</br>
+   </br>
+   if(s.length()<13)</br>
+   {//System.out.println(scan.nextLine());</br>
+	System.out.println(s);}</br>
+   </br>
+   else</br>
+   {</br>
+	for(int i=0;i<=12;i++)</br>
+	{c=s.charAt(i);</br>
+	 n=n+c;</br>
+	 //System.out.println(n);</br>
+	}</br>
+	</br>
+	if(n.equals(w))</br>
+	{//System.out.println("@JsonIgnore");</br>
+	 //System.out.println(scan.nextLine());</br>
+	 System.out.println("@JsonIgnore");</br>
+	 System.out.println(s);}	</br>
+	else</br>
+	{//System.out.println(scan.nextLine());</br>
+	 System.out.println(s);}</br>
+   }</br>
+  }</br>
+        // if(n == "JsonProperty")</br>
+        //{System.out.println(scan.nextLine());} </br>
+}}</br>
+
+</p>
+<p>
+input:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//input is given inside sample2.txt</br>
+</br>
+the quick brown fox</br>
+what does the fox say</br>
+@JsonProperty</br>
+qwerty</br>
+baka</br>
+</br>
+output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//is displayed in console</br>
+</br>
+the quick brown fox</br>
+what does the fox say</br>
+@JsonIgnore</br>
+@JsonProperty</br>
+qwerty</br>
+baka</br>
+</p>
+<a href="#top">back to top</a></p>
+
+
+<p id="0003">
+<u><b>Program to write output to a text file (currently not working)</b></u><br> 
+<p>
+
+package filereaderout;</br>
+import java.io.*;</br>
+import java.util.Scanner;</br>
+</br>
+public class filereaderout</br>
+{</br>
+ public static void main(String[] args) throws IOException</br>
+ {</br>
+  File file = new File("E:\\eclipse for java\\content workspace\\filereader\\sample1");//input is given in sample1.txt</br>
+  Scanner scan = new Scanner(file);</br>
+  </br>
+  File file1=new File("E:\\eclipse for java\\content workspace\\filereader\\out");//output is printed on to out.txt</br>
+  FileWriter fw=new FileWriter(file1);</br>
+  //BufferedWriter bw = new BufferedWriter(fw);</br>
+  PrintWriter pw=new PrintWriter(fw);</br>
+  </br>
+  while(scan.hasNextLine())</br>
+  {</br>
+   String s=scan.nextLine();</br>
+   //System.out.println(s);</br>
+   pw.println(s);</br>
+  }</br>
+  </br>
+}}</br>
+
+
+</p>
+<p>
+input:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//input is given inside sample1.txt</br>
+</br>
+akash</br>
+acash</br>
+alash</br>
+</br>
+output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//is got inside out.txt</br>
+</br>
+akash</br>
+acash</br>
+alash</br>
+</br>
+</p>
+<a href="#top">back to top</a></p>
+
+
+<p id="0004">
+<u><b>Program to take inputs from Excel sheet</b></u><br> 
+<p>
+
+UPLOADING SOON!!</br>
+
+</p>
+<p>
+input:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// </br>
+</br>
+
+</br>
+output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// </br>
+</br>
+
+</br>
+</p>
+<a href="#top">back to top</a></p>
+
+
+   </body>
+</html>

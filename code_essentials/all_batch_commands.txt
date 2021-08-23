@@ -1,0 +1,13 @@
+@echo off
+
+E:
+cd E:\acashsoftware\work           //copies dummy.xlsx inside work folder and place in play folder
+copy dummy.xlsx play               //note:play folder is inside work folder, ...work/play   
+cd E:\acashsoftware\work\play
+ren dummy.xlsx acash.xlsx          //renames dummy.xlsx to acash.xlsx.
+start acash.xlsx                   //opens that file
+
+start chrome "https://www.google.com"
+
+cd E:\acashsoftware\work
+start meow.txt
