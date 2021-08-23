@@ -9,17 +9,17 @@
    <body style="background-color:grey;">
     <br />
     <h3 id="top">
-      <font size="6">CODING-ESSENTIALS</font>
+      <font size="6">CODING - ESSENTIALS</font>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <font>
       <a href="index.html">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="#0001">Batch_scripts</a>&nbsp;
-<a href="#0002">file_reader</a>&nbsp;
-<a href="#0003">print_writer</a>&nbsp;
-<a href="#0004">read_input_from_excel</a>&nbsp;
+<a href="#0001">BatchScripts</a>&nbsp;
+<a href="#0002">FileRreader</a>&nbsp;
+<a href="#0003">PrintWriter</a>&nbsp;
+<a href="#0004">ReadInputFromExcel</a>&nbsp;
 
       </font>
     </h3>
@@ -170,17 +170,56 @@ alash</br>
 <u><b>Program to take inputs from Excel sheet</b></u><br> 
 <p>
 
-UPLOADING SOON!!</br>
+package excel_reader;</br>
+</br>
+import java.io.*;</br>
+import org.apache.poi.ss.usermodel.*;</br>
+import org.apache.poi.xssf.usermodel.*;</br>
+//have apache poi integarted first!</br>
+</br>
+public class excel_reader</br>
+{</br>
+ public static void main(String[] args)</br>
+ {</br>
+  String path="E:/acashsoftware/work/acash.xlsx";</br>
+  int last_row=5;</br>
+  </br>
+  FileInputStream file=new FileInputStream(new File(path));</br>
+  Workbook workbook=new XSSFWorkbook(file);</br>
+  XSSFSheet fSheet=(XSSFSheet) workbook.getSheetAt(0);</br>
+  /* XSSFRow rowA1=fSheet.getRow(0);</br>
+  XSSFCell cellA1=rowA1.getCell(0);</br>
+  System.out.println(cellA1); */</br>
+  </br>
+  int i;</br>
+  for(i=2;i<last_row;i++)    //gets 3rd row onwards</br>
+  {</br>
+   XSSFRow rowA3=fSheet.getRow(i);</br>
+   XSSFCell cellA3=rowA3.getCell(0); //get 1st column</br>
+   //System.out.println(cellA3);</br>
+   XSSFRow rowA2=fSheet.getRow(i);</br>
+   XSSFCell cellA2=rowA2.getCell(2); //gets 3rd column</br>
+   //System.out.println(cellA2);</br>
+   //System.out.println(cellA3+","+cellA2);</br>
+   String s=cellA2.toString();</br>
+   String a=cellA3.toString();</br>
+   System.out.println(s+","+a);</br>
+  }</br>
+  </br>
+}}</br>
+
 
 </p>
 <p>
 input:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// </br>
 </br>
-
+<h3><img src="code_essentials/excel_input.png"></h3>
 </br>
 output:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// </br>
 </br>
-
+strange,apple</br>
+proton,zima</br>
+gluon,blue</br>
 </br>
 </p>
 <a href="#top">back to top</a></p>
